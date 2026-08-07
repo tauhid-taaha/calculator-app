@@ -48,14 +48,13 @@ describe("Integration Tests (Spy)", () => {
 });
 
 describe("Integration Tests (Stub)", () => {
-  // Stub: replace advanced.pow so growth factor is fixed to 1
-  // This isolates custom.js logic from advanced.js's real implementation.
+ 
   test("compoundInterest uses stubbed advanced.pow", () => {
     const powStub = jest.spyOn(advanced, "pow").mockImplementation(() => 1);
 
     const res = custom.compoundInterest(1000, 10, 2);
 
-    // growthFactor stubbed to 1, so amount === principal, interest === 0
+   
     expect(res.amount).toBe(1000);
     expect(res.interest).toBe(0);
     expect(powStub).toHaveBeenCalledWith(1.1, 2);

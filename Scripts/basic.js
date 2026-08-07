@@ -1,4 +1,4 @@
-// Basic Calculator - simple one-by-one operations
+
 function add(a, b) {
   return a + b;
 }

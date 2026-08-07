@@ -1,4 +1,4 @@
-// Advanced Calculator - power, sqrt, percentage
+
 function pow(base, exponent) {
   return Math.pow(base, exponent);
 }
