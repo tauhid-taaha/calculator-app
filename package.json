@@ -1,0 +1,12 @@
+{
+  "name": "calculator-app",
+  "version": "1.0.0",
+  "description": "Web-based calculator app with Basic, Advanced and Custom (Compound Interest) calculators",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}

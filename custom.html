@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Custom Calculator - Compound Interest</title>
+</head>
+<body>
+  <h1>Compound Interest Calculator</h1>
+  <input id="principal" type="number" placeholder="Principal">
+  <input id="rate" type="number" placeholder="Rate % per year">
+  <input id="years" type="number" placeholder="Years">
+  <br>
+  <button onclick="run()">Calculate</button>
+  <p id="result"></p>
+
+  <a href="index.html">Back to Home</a>
+
+  <script src="Scripts/basic.js"></script>
+  <script src="Scripts/advanced.js"></script>
+  <script src="Scripts/custom.js"></script>
+  <script>
+    function run() {
+      const principal = Number(document.getElementById('principal').value);
+      const rate = Number(document.getElementById('rate').value);
+      const years = Number(document.getElementById('years').value);
+      try {
+        const res = custom.compoundInterest(principal, rate, years);
+        document.getElementById('result').textContent =
+          "Final Amount: " + res.amount.toFixed(2) +
+          " | Interest Earned: " + res.interest.toFixed(2);
+      } catch (e) {
+        document.getElementById('result').textContent = "Error: " + e.message;
+      }
+    }
+  </script>
+</body>
+</html>

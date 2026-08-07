@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Advanced Calculator</title>
+</head>
+<body>
+  <h1>Advanced Calculator</h1>
+  <input id="a" type="number" placeholder="Number A">
+  <input id="b" type="number" placeholder="Number B (exponent/percent, ignored for sqrt)">
+  <br>
+  <button onclick="run('pow')">A ^ B</button>
+  <button onclick="run('sqrtA')">sqrt(A)</button>
+  <button onclick="run('percentage')">A% of B</button>
+  <p id="result"></p>
+
+  <a href="index.html">Back to Home</a>
+
+  <script src="Scripts/advanced.js"></script>
+  <script>
+    function run(op) {
+      const a = Number(document.getElementById('a').value);
+      const b = Number(document.getElementById('b').value);
+      try {
+        let result;
+        if (op === 'sqrtA') {
+          result = advanced.sqrt(a);
+        } else {
+          result = advanced[op](a, b);
+        }
+        document.getElementById('result').textContent = "Result: " + result;
+      } catch (e) {
+        document.getElementById('result').textContent = "Error: " + e.message;
+      }
+    }
+  </script>
+</body>
+</html>
